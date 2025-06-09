@@ -1,0 +1,258 @@
+/* General Styles */
+.home-container {
+    font-family: "Poppins", sans-serif;
+    color: #333;
+    background-color: #F5EEDC;
+    line-height: 1.6;
+  }
+  
+  /* Hero Section */
+  .hero {
+    background: url("/assets/interior-bg.jpg") no-repeat center/cover;
+    color: #333;
+    text-align: center;
+    padding: 100px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hero-content {
+    max-width: 700px;
+  }
+  
+  .hero h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #5a4a42;
+  }
+  
+  .hero p {
+    font-size: 18px;
+    margin: 20px 0;
+    color: #6f5e51;
+  }
+  
+  .hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap; /* Ensures buttons wrap on smaller screens */
+  }
+  
+  .btn {
+    padding: 14px 28px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  .btn.primary {
+    background-color: #D4C9BE;
+    color: #5a4a42;
+    border: none;
+  }
+  
+  .btn.secondary {
+    background: transparent;
+    color: #5a4a42;
+    border: 2px solid #D4C9BE;
+  }
+  
+  .btn:hover {
+    background-color: #c1b4a9;
+    color: white;
+  }
+  
+  /* Features Section */
+  .features {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #F5EEDC;
+  }
+  
+  .features h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #5a4a42;
+  }
+  
+  .feature-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .feature {
+    max-width: 300px;
+  }
+  
+  /* Showcase Section */
+  .showcase {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 60px 20px;
+    background-color: #D4C9BE;
+    color: white;
+    text-align: center;
+  }
+  
+  .showcase-item {
+    max-width: 400px;
+  }
+  
+  .showcase h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  
+  .showcase-btn {
+    background-color: white;
+    color: #5a4a42;
+    border: none;
+    margin-top: 10px;
+    padding: 12px 20px;
+    display: inline-block;
+  }
+  
+  .showcase-btn:hover {
+    background-color: #f5e0c9;
+  }
+  
+  /* Testimonials Section */
+  .testimonials {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #F5EEDC;
+  }
+  
+  .testimonial-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .testimonial {
+    background: #D4C9BE;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 300px;
+    color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .testimonial p {
+    font-style: italic;
+  }
+  
+  /* Call to Action */
+  .cta {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #D4C9BE;
+    color: white;
+  }
+  
+  .cta h2 {
+    font-size: 32px;
+  }
+  
+  .cta p {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #090909;
+    color: white;
+  }
+  
+  /* RESPONSIVE DESIGN */
+  
+  /* Medium screens (Tablets) */
+  @media (max-width: 1024px) {
+    .hero h1 {
+      font-size: 40px;
+    }
+  
+    .hero p {
+      font-size: 16px;
+    }
+  
+    .feature-list,
+    .showcase,
+    .testimonial-list {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .feature,
+    .showcase-item,
+    .testimonial {
+      max-width: 90%;
+      text-align: center;
+    }
+  
+    .hero-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .btn {
+      width: 80%;
+      text-align: center;
+    }
+  }
+  
+  /* Small screens (Mobile) */
+  @media (max-width: 768px) {
+    .hero {
+      padding: 60px 20px;
+    }
+  
+    .hero h1 {
+      font-size: 32px;
+    }
+  
+    .hero p {
+      font-size: 14px;
+    }
+  
+    .btn {
+      padding: 12px 20px;
+      font-size: 16px;
+    }
+  
+    .feature-list {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .showcase {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .testimonial-list {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .cta h2 {
+      font-size: 28px;
+    }
+  
+    .cta p {
+      font-size: 16px;
+    }
+  }
+  

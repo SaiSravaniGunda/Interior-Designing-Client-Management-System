@@ -1,0 +1,109 @@
+/* Container styling */
+.project-request-container {
+  max-width: 600px;
+  margin:  auto;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.project-request-container:hover {
+  transform: scale(1.02);
+}
+
+/* Title styling */
+.form-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 26px;
+  font-weight: bold;
+  color: #222;
+  margin-top: 50px;
+}
+
+/* Form layout */
+.project-request-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Input group styling */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+/* Input fields */
+.form-input {
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #000000;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Designer ID note */
+.designer-id-note {
+  font-size: 13px;
+  color: #777;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+/* Submit button */
+.submit-button {
+  padding: 14px;
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.submit-button:hover {
+  background: #333333;
+  transform: translateY(-2px);
+}
+
+.submit-button:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .project-request-container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .form-title {
+    font-size: 22px;
+  }
+
+  .form-input {
+    font-size: 14px;
+  }
+
+  .submit-button {
+    font-size: 16px;
+    padding: 12px;
+  }
+}

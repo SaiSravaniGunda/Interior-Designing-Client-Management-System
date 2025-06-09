@@ -1,0 +1,136 @@
+
+.pending-projects-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+
+.heading {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+
+.project-card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    background: #fff;
+    padding: 20px;
+    text-align: left;
+}
+
+.project-card:hover {
+    transform: translateY(-3px);
+}
+
+
+.project-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
+.project-info {
+    font-size: 0.95rem;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    color: #555;
+    text-align: left;
+    padding-left: 10px;
+}
+
+
+.status-badge {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 8px;
+}
+
+
+.status-badge.approved {
+    background-color: #28a745;
+    color: white;
+}
+
+.status-badge.rejected {
+    background-color: #dc3545;
+    color: white;
+}
+
+.status-badge.pending {
+    background-color: #ffc107;
+    color: black;
+}
+
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+
+.button-group button {
+    flex: 1;
+    font-weight: bold;
+    transition: 0.3s;
+    margin: 0 5px;
+}
+
+.button-group button:hover {
+    opacity: 0.8;
+}
+
+
+@media (min-width: 1024px) {
+    .project-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for large screens */
+    }
+}
+
+
+@media (max-width: 768px) {
+    .project-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-card {
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+    }
+
+    .button-group {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .button-group button {
+        width: 100%;
+    }
+
+    .status-badge {
+        margin-left: 0;
+        margin-top: 4px;
+    }
+}

@@ -1,0 +1,142 @@
+/* DesignerPortfolio.css */
+
+/* Container for the Designer Portfolio details */
+.designer-portfolio-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading for portfolio name */
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+/* Heading for Projects */
+h4 {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  color: #444;
+  text-align: center;
+}
+
+/* Project Item Styles */
+.project-item {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Project Item Text */
+.project-item p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+/* Project Item Image */
+.project-item img {
+  margin-top: 10px;
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/* Hover Effect on Project Item */
+.project-item:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Projects List Styles */
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Styled Paragraph for Project Titles */
+.projects-list p {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+
+/* Button to Copy Designer ID */
+.copy-button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.copy-button {
+  background-color: #000; /* Black button */
+  color: white; /* White text */
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+.copy-button:hover {
+  background-color: #333; /* Darker black on hover */
+  transform: translateY(-3px); /* Lift effect */
+}
+
+.copy-button:focus {
+  outline: none;
+}
+
+.copy-button:active {
+  transform: translateY(0); /* Reset transform when button is clicked */
+}
+
+.copy-button:disabled {
+  background-color: #555; /* Disabled state */
+  cursor: not-allowed;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  /* Adjust container padding and font sizes for smaller screens */
+  .designer-portfolio-container {
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  h4 {
+    font-size: 1.3rem;
+  }
+
+  /* Adjust project item layout for smaller screens */
+  .projects-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-item {
+    width: 100%;
+  }
+
+  /* Make button full width on smaller screens */
+  .copy-button {
+    width: 100%;
+    padding: 12px;
+    text-align: center;
+  }
+}

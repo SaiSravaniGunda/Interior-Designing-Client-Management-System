@@ -1,0 +1,139 @@
+/* Chat Container */
+.chat-container {
+  max-width: 600px;
+  margin: auto;
+  background: #ffffff; /* White background */
+  color: black;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Chat Header */
+.chat-header {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #ddd;
+  color: black;
+  margin-top: 50px;
+}
+
+/* Messages Container */
+.messages-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Message Styling */
+.message {
+  max-width: 80%;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 8px;
+  word-wrap: break-word;
+}
+
+/* Sent Messages */
+.sent {
+  background: black; /* Black for sent messages */
+  color: white ;
+  align-self: flex-end;
+  border-radius: 10px 10px 0 10px;
+}
+
+.sent p {
+  color: white !important;
+}
+
+/* Received Messages */
+.received {
+  background: #f1f1f1; /* Light gray for received */
+  color: black;
+  align-self: flex-start;
+  border-radius: 10px 10px 10px 0;
+}
+
+/* File Attachments */
+.message a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.message a:hover {
+  text-decoration: underline;
+}
+
+/* Input Container */
+.input-container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background: #f1f1f1;
+  border-top: 2px solid #ddd;
+  border-radius: 10px;
+}
+
+/* Message Input */
+.input-container input[type="text"] {
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 20px;
+  outline: none;
+  background: white;
+  color: black;
+  margin-right: 10px;
+}
+
+/* File Upload Button */
+.file-label {
+  background: black; /* Black upload button */
+  padding: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: white;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.file-label:hover {
+  background: #333;
+}
+
+/* Hide Default File Input */
+input[type="file"] {
+  display: none;
+}
+
+/* Send Button */
+.input-container button {
+  background: black;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 16px;
+}
+
+.input-container button:hover {
+  background: #333;
+}

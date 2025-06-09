@@ -1,0 +1,22 @@
+.vendor-list {
+    padding: 20px;
+  }
+  
+  .vendor-list ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .vendor-list li {
+    padding: 10px;
+    background: #f4f4f4;
+    margin: 5px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+  }
+  
+  .vendor-list li:hover {
+    background: #ddd;
+  }
+  

@@ -1,0 +1,94 @@
+/* Navbar Container */
+.navbar {
+  background: #000000 !important; 
+  border-bottom: 2px solid #222;
+  /* z-index:-1; */
+  z-index: 1000;
+  position: fixed;
+  width: 100%;
+  
+}
+
+/* Navbar Toggler */
+.navbar-toggler {
+  border: none; /* Remove default border */
+}
+
+.navbar-toggler:hover {
+  background: #333; /* Slightly darker background on hover */
+}
+
+/* Navbar Nav */
+.navbar-nav {
+  text-align: center; /* Ensure navbar items are centered */
+  display: flex;
+  justify-content: center; /* Center align navbar links */
+  width: 100%;
+  margin: 0; /* Remove any unwanted margin */
+}
+
+.navbar-nav .nav-item {
+  margin-right: 15px; /* Space between nav items */
+}
+
+/* Navbar Links */
+.nav-link {
+  color: white; /* White color for nav links */
+  padding: 10px 15px; /* Spacing around the links */
+  border-radius: 5px; /* Rounded corners */
+  transition: background 0.3s ease; /* Smooth transition */
+}
+
+.nav-link:hover {
+  background: #333; /* Dark gray background on hover */
+  color: #f0f0f0; /* Slightly lighter color on hover */
+}
+
+/* Adjust Logout Button */
+.logout-btn {
+  margin-left: 10px;
+  background: #333; /* Black background for logout button */
+  color: white; /* White text */
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  /* Prevent any Bootstrap button styles from applying */
+}
+
+.logout-btn:hover {
+  background: #555; /* Darker background when hovered */
+}
+
+.logout-btn:focus, .logout-btn:active {
+  outline: none; /* Remove outline */
+  background: #555; /* Keep background consistent */
+  color: white; /* Keep text color white */
+}
+
+/* Responsive Navbar */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background: #333; /* Dark background for the collapsible menu */
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .navbar-nav {
+    display: flex;
+    flex-direction: column; /* Stack links vertically */
+    align-items: center; /* Center items */
+    padding: 0; /* Remove padding */
+  }
+
+  .nav-link {
+    color: white; /* White color for nav links */
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .nav-link:hover {
+    background: rgba(255, 255, 255, 0.1); /* Lighter gray hover effect */
+  }
+}

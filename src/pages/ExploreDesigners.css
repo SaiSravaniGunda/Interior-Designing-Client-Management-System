@@ -1,0 +1,83 @@
+/* ExploreDesigners.css */
+
+/* Container for the entire Explore Designers section */
+.explore-designers-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.explore-heading {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 600;
+  margin-top: 50px;
+  color: #333;
+}
+
+.designers-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.designer-item {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.designer-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.designer-item p {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  color: #000000;
+}
+
+/* Custom Button */
+.view-portfolio-btn {
+  background-color: #000000; /* Black background */
+  color: white; /* White text */
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.view-portfolio-btn:hover {
+  background-color: #333333; /* Darker black on hover */
+  transform: translateY(-3px); /* Slight lift on hover */
+}
+
+.view-portfolio-btn:focus {
+  outline: none; /* Remove outline on focus */
+}
+
+/* Media Query for Responsiveness */
+@media (max-width: 768px) {
+  .designer-item {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .view-portfolio-btn {
+    padding: 10px 15px;
+  }
+}

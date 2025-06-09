@@ -1,0 +1,129 @@
+/* Portfolio Container */
+.portfolio-container {
+    padding: 20px;
+    max-width: 800px;
+    /* margin-top: 70px; */
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+/* Section Styling */
+.portfolio-section, .create-portfolio-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+/* Header Styling */
+/* portfolio-section h2, h3 {
+    font-size: 24px;
+    color: #333;
+    margin-top: 70px;
+    margin-bottom: 10px;
+} */
+
+.portfolio-heading{
+    font-size: 24px;
+    color: #333;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+/* Paragraph Styling */
+p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Input Fields */
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Button Styling */
+button {
+    background-color: #050505;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #212222;
+}
+
+/* Project Section */
+.project-section {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fafafa;
+}
+
+.project-item {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #e1e1e1;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+}
+
+.project-item img {
+    margin-top: 10px;
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+/* Projects List */
+.projects-list {
+    margin-top: 20px;
+}
+
+.projects-list p {
+    color: #777;
+    font-size: 14px;
+}
+
+/* Loading State */
+.loading-state {
+    text-align: center;
+    font-size: 18px;
+    color: #888;
+}
+
+/* Create Portfolio Section */
+.create-portfolio-section {
+    background-color: #f4f7fa;
+}
+
+.create-portfolio-section input[type="text"] {
+    width: 45%;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.create-portfolio-section input[type="number"] {
+    width: 45%;
+    display: inline-block;
+}
+
+.create-portfolio-section button {
+    background-color: #28a745;
+    color: white;
+    margin-top: 20px;
+}
+
+.create-portfolio-section button:hover {
+    background-color: #218838;
+}

@@ -1,0 +1,47 @@
+.project-progress-wrapper {
+    max-width: 900px;
+    margin:  auto;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 50px;
+}
+
+.no-projects {
+    text-align: center;
+    font-size: 18px;
+    /* margin-top: 70px; */
+    padding: 15px;
+}
+
+.project-table {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.project-table th {
+    /* background: #0b0b0b; */
+    color: rgb(10, 10, 10);
+    text-align: center;
+}
+
+.project-table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.project-table select {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+}

@@ -1,0 +1,77 @@
+.shop-container {
+    max-width: 600px;
+    margin:  auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #ccc;
+    border-top: 4px solid #007bff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+    
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.shop-card {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+}
+
+/* .shop-card h2 {
+    margin-bottom: 10px;
+} */
+
+.shop-name{
+    margin-bottom: 10px;
+    color: black;
+}
+.alert {
+    color: red;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.shop-form .form-group {
+    margin-bottom: 15px;
+}
+
+.shop-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.shop-form input, .shop-form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-btn:disabled {
+    background: #ccc;
+}
