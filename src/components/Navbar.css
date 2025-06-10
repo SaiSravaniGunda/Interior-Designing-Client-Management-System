@@ -46,7 +46,7 @@
 
 /* Adjust Logout Button */
 .logout-btn {
-  margin-left: 10px;
+  margin-left: 400px;
   background: #333; /* Black background for logout button */
   color: white; /* White text */
   padding: 10px 15px;
@@ -90,5 +90,8 @@
 
   .nav-link:hover {
     background: rgba(255, 255, 255, 0.1); /* Lighter gray hover effect */
+  }
+  .logout-btn {
+    margin-left: auto; /* large margin on large screens */
   }
 }

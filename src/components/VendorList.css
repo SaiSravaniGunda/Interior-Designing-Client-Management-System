@@ -6,7 +6,9 @@
     list-style: none;
     padding: 0;
   }
-  
+  .shop-name{
+    padding-top: 20px;
+  }
   .vendor-list li {
     padding: 10px;
     background: #f4f4f4;

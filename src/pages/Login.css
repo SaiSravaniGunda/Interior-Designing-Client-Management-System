@@ -67,6 +67,13 @@
     background-color: #b3b3b3; /* Lighter gray for disabled state */
     cursor: not-allowed;
   }
+
+  .error-message {
+  color: red;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
   
   /* Responsive Design */
   @media (max-width: 768px) {

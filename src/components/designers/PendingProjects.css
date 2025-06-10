@@ -86,6 +86,17 @@
     display: flex;
     justify-content: space-between;
     margin-top: 12px;
+    gap: 10px; 
+}
+
+
+.btn-xs {
+  padding: 4px 10px !important;
+  font-size: 0.90rem !important;
+  line-height: 1.8 !important;
+  border-radius: 4px !important;
+  min-width: 150px; /* Ensures both buttons have equal width */
+  text-align: center;
 }
 
 .button-group button {

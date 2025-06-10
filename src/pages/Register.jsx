@@ -3,33 +3,65 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Register.css";
 
+const getPasswordStrength = (password) => {
+  return {
+    length: password.length >= 8,
+    upper: /[A-Z]/.test(password),
+    lower: /[a-z]/.test(password),
+    number: /[0-9]/.test(password),
+    special: /[!@#$%^&*]/.test(password),
+  };
+};
+
+const calculateStrengthLabel = (strength) => {
+  const passedRules = Object.values(strength).filter(Boolean).length;
+
+  if (passedRules === 5) return { label: "Strong", emoji: "🟢" };
+  if (passedRules >= 3) return { label: "Moderate", emoji: "🟠" };
+  if (passedRules > 0) return { label: "Weak", emoji: "🔴" };
+  return { label: "", emoji: "" };
+};
+
 const Register = () => {
   const navigate = useNavigate();
-  const [role, setRole] = useState("USER"); // Default role should be USER
+  const [role, setRole] = useState("USER");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     password: "",
   });
+  const [strength, setStrength] = useState({});
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+
+    if (name === "password") {
+      setStrength(getPasswordStrength(value));
+    }
   };
 
   const handleRoleChange = (selectedRole) => {
-    // Convert role to uppercase to match Enum values in the backend
-    const formattedRole = selectedRole.toUpperCase(); 
-    setRole(formattedRole);
+    setRole(selectedRole.toUpperCase());
   };
+
+  // Check if password meets all requirements (all true)
+  const isPasswordStrong = Object.values(strength).every(Boolean);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!isPasswordStrong) {
+      alert("Password does not meet all the requirements. Please fix it before registering.");
+      return;
+    }
+
     try {
       const res = await axios.post(
         "http://localhost:8081/auth/register",
         {
           ...formData,
-          role, // Sending uppercase role (USER, DESIGNER, VENDOR)
+          role,
         },
         {
           headers: {
@@ -44,11 +76,12 @@ const Register = () => {
     }
   };
 
+  const { label, emoji } = calculateStrengthLabel(strength);
+
   return (
     <div className="register-container">
       <h2 className="text-center">Register</h2>
 
-      {/* Role Selection */}
       <div className="role-selection">
         <button
           className={`role-btn ${role === "USER" ? "active" : ""}`}
@@ -99,9 +132,42 @@ const Register = () => {
           required
         />
 
-        <button type="submit" className="submit-btn">
+        {/* Password strength feedback */}
+        <div className="password-hints">
+          <p>Password must contain:</p>
+          <ul>
+            <li className={strength.length ? "valid" : "invalid"}>
+              At least 8 characters
+            </li>
+            <li className={strength.upper ? "valid" : "invalid"}>
+              At least one uppercase letter
+            </li>
+            <li className={strength.lower ? "valid" : "invalid"}>
+              At least one lowercase letter
+            </li>
+            <li className={strength.number ? "valid" : "invalid"}>
+              At least one number
+            </li>
+            <li className={strength.special ? "valid" : "invalid"}>
+              At least one special character (!@#$%^&*)
+            </li>
+          </ul>
+          {label && (
+            <p className={`strength-label ${label.toLowerCase()}`}>
+              Password strength: {emoji} <strong>{label}</strong>
+            </p>
+          )}
+        </div>
+
+        <button type="submit" className="submit-btn" disabled={!isPasswordStrong}>
           Register
         </button>
+
+        {!isPasswordStrong && (
+          <p style={{ color: "red", marginTop: "10px" }}>
+            Password must meet all requirements to register.
+          </p>
+        )}
       </form>
     </div>
   );
