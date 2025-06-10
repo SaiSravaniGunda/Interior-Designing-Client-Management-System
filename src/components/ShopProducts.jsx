@@ -27,7 +27,7 @@ const ShopProducts = ({ shopId }) => {
 
   return (
     <div className="shop-products">
-      <h2>Shop Products</h2>
+      <h2 className="shop-product-heading">Shop Products</h2>
       {loading ? (
         <p>Loading...</p>
       ) : error ? (

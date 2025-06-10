@@ -26,7 +26,9 @@
   .product-card img:hover {
     transform: scale(1.05);
   }
-  
+  .shop-product-heading{
+    padding-left: 20px;
+  }
   /* Image Modal */
   .image-modal {
     position: fixed;
