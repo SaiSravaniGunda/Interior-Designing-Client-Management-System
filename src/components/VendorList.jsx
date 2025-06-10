@@ -33,7 +33,7 @@ const VendorList = ({ onSelectShop }) => {
         <div className="vendor-grid">
           {shops.map((shop) => (
             <div key={shop.id} className="vendor-card" onClick={() => onSelectShop(shop.id)}>
-              <h3>{shop.name}</h3>
+              <h3 className="shop-name">{shop.name}</h3>
               {shop.description}
               <p><strong>Address:</strong> {shop.address}</p>
              

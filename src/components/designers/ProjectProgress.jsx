@@ -25,6 +25,7 @@ const ProjectProgress = () => {
 
         axios.get(`http://localhost:8081/approved-projects/designer/${designerId}`, { withCredentials: true })
             .then(response => {
+                
                 setProjects(response.data);
             })
             .catch(error => {
@@ -58,47 +59,51 @@ const ProjectProgress = () => {
 
     if (loading) return <Spinner animation="border" className="d-block mx-auto mt-4" />;
 
-    return (
-        <div className="project-progress-wrapper">
-            <h2 className="title">Project Progress</h2>
-            <ToastContainer />
+    // Filter out COMPLETION projects
+const activeProjects = projects.filter(project => project.status !== "COMPLETION");
 
-            {projects.length === 0 ? (
-                <Alert className="no-projects" variant="info">No projects assigned yet.</Alert>
-            ) : (
-                <Table striped bordered hover responsive className="project-table">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Project Name</th>
-                            <th>Current Status</th>
-                            <th>Update Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {projects.map((project, index) => (
-                            <tr key={project.id}>
-                                <td>{index + 1}</td>
-                                <td>{project.projectRequest?.name || "Unnamed Project"}</td>
-                                <td>{project.status}</td>
-                                <td>
-                                    <Form.Select
-                                        disabled={updating}
-                                        value={project.status || statuses[0]}
-                                        onChange={(e) => updateStatus(project.id, e.target.value)}
-                                    >
-                                        {statuses.map(status => (
-                                            <option key={status} value={status}>{status}</option>
-                                        ))}
-                                    </Form.Select>
-                                </td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </Table>
-            )}
-        </div>
-    );
+return (
+  <div className="project-progress-wrapper">
+    <h2 className="title">Project Progress</h2>
+    <ToastContainer />
+
+    {activeProjects.length === 0 ? (
+      <Alert className="no-projects" variant="info">No projects assigned yet.</Alert>
+    ) : (
+      <Table striped bordered hover responsive className="project-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Project Name</th>
+            <th>Current Status</th>
+            <th>Update Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {activeProjects.map((project, index) => (
+            <tr key={project.id}>
+              <td>{index + 1}</td>
+              <td>{project.projectRequest?.name || "Unnamed Project"}</td>
+              <td>{project.status}</td>
+              <td>
+                <Form.Select
+                  disabled={updating}
+                  value={project.status || statuses[0]}
+                  onChange={(e) => updateStatus(project.id, e.target.value)}
+                >
+                  {statuses.map(status => (
+                    <option key={status} value={status}>{status}</option>
+                  ))}
+                </Form.Select>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
+    )}
+  </div>
+);
+
 };
 
 export default ProjectProgress;

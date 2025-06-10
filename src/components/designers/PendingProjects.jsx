@@ -96,10 +96,10 @@ const PendingProjects = () => {
 
                                     {project.status === "Pending" && (
                                         <div className="button-group">
-                                            <Button variant="success" size="sm" onClick={() => handleApprove(project.id)}>
+                                            <Button variant="success" className="btn-xs" onClick={() => handleApprove(project.id)}>
                                                 ✅ Approve
                                             </Button>
-                                            <Button variant="danger" size="sm" onClick={() => handleReject(project.id)}>
+                                            <Button variant="danger" className="btn-xs" onClick={() => handleReject(project.id)}>
                                                 ❌ Reject
                                             </Button>
                                         </div>
