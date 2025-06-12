@@ -31,10 +31,13 @@ import VendorOrders from './components/vendors/VendorOrders';
 import MyOrders from './components/clients/MyOrders';
 import HomePage from './pages/HomePage';
 
-// ✅ PrivateRoute component
-const PrivateRoute = ({ element }) => {
-  const { isLoggedIn } = useAuth();
-  return isLoggedIn ? element : <Navigate to="/login" />;
+// ✅ PrivateRoute now takes children
+const PrivateRoute = ({ children }) => {
+  const { isLoggedIn, authLoading } = useAuth();
+
+  if (authLoading) return <div>Loading...</div>;
+
+  return isLoggedIn ? children : <Navigate to="/login" />;
 };
 
 function App() {
@@ -49,29 +52,29 @@ function App() {
           <Route path="/register" element={<Register />} />
 
           {/* Protected Routes */}
-          <Route path="/dashboard" element={<PrivateRoute element={<Dashboard />} />} />
-          <Route path="/client-dashboard" element={<PrivateRoute element={<ClientDashboard />} />} />
-          <Route path="/create-portfolio" element={<PrivateRoute element={<CreatePortfolio />} />} />
-          <Route path="/designer-dashboard" element={<PrivateRoute element={<DesignerDashboard />} />} />
-          <Route path="/portfolios" element={<PrivateRoute element={<ExploreDesigners />} />} />
-          <Route path="/portfolio/:portfolioId" element={<PrivateRoute element={<DesignerPortfolio />} />} />
-          <Route path="/new-project-request" element={<PrivateRoute element={<ProjectRequestForm />} />} />
-          <Route path="/vendor-dashboard" element={<PrivateRoute element={<VendorDashboard />} />} />
-          <Route path="/designer/project-requests" element={<PrivateRoute element={<PendingProjects />} />} />
-          <Route path="/designer/project-progress" element={<PrivateRoute element={<ProjectProgress />} />} />
-          <Route path="/my-projects" element={<PrivateRoute element={<ClientProjectProgress />} />} />
-          <Route path="/my-designers" element={<PrivateRoute element={<MyDesigners />} />} />
-          <Route path="/designer/my-clients" element={<PrivateRoute element={<MyClient />} />} />
-          <Route path="/chat/:senderId/:recipientId" element={<PrivateRoute element={<Chat />} />} />
-          <Route path="/designer/completed-projects" element={<PrivateRoute element={<CompletedProjects />} />} />
-          <Route path="/my-shop" element={<PrivateRoute element={<MyShop />} />} />
-          <Route path="/vendor/add-product" element={<PrivateRoute element={<AddProduct />} />} />
-          <Route path="/vendor/view-products" element={<PrivateRoute element={<VendorProducts />} />} />
-          <Route path="/shops" element={<PrivateRoute element={<ShopPage />} />} />
-          <Route path="/cart" element={<PrivateRoute element={<CartPage />} />} />
-          <Route path="/view-products" element={<PrivateRoute element={<ViewProducts />} />} />
-          <Route path="/vendor/view-orders" element={<PrivateRoute element={<VendorOrders />} />} />
-          <Route path="/my-orders" element={<PrivateRoute element={<MyOrders />} />} />
+          <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+          <Route path="/client-dashboard" element={<PrivateRoute><ClientDashboard /></PrivateRoute>} />
+          <Route path="/create-portfolio" element={<PrivateRoute><CreatePortfolio /></PrivateRoute>} />
+          <Route path="/designer-dashboard" element={<PrivateRoute><DesignerDashboard /></PrivateRoute>} />
+          <Route path="/portfolios" element={<PrivateRoute><ExploreDesigners /></PrivateRoute>} />
+          <Route path="/portfolio/:portfolioId" element={<PrivateRoute><DesignerPortfolio /></PrivateRoute>} />
+          <Route path="/new-project-request" element={<PrivateRoute><ProjectRequestForm /></PrivateRoute>} />
+          <Route path="/vendor-dashboard" element={<PrivateRoute><VendorDashboard /></PrivateRoute>} />
+          <Route path="/designer/project-requests" element={<PrivateRoute><PendingProjects /></PrivateRoute>} />
+          <Route path="/designer/project-progress" element={<PrivateRoute><ProjectProgress /></PrivateRoute>} />
+          <Route path="/my-projects" element={<PrivateRoute><ClientProjectProgress /></PrivateRoute>} />
+          <Route path="/my-designers" element={<PrivateRoute><MyDesigners /></PrivateRoute>} />
+          <Route path="/designer/my-clients" element={<PrivateRoute><MyClient /></PrivateRoute>} />
+          <Route path="/chat/:senderId/:recipientId" element={<PrivateRoute><Chat /></PrivateRoute>} />
+          <Route path="/designer/completed-projects" element={<PrivateRoute><CompletedProjects /></PrivateRoute>} />
+          <Route path="/my-shop" element={<PrivateRoute><MyShop /></PrivateRoute>} />
+          <Route path="/vendor/add-product" element={<PrivateRoute><AddProduct /></PrivateRoute>} />
+          <Route path="/vendor/view-products" element={<PrivateRoute><VendorProducts /></PrivateRoute>} />
+          <Route path="/shops" element={<PrivateRoute><ShopPage /></PrivateRoute>} />
+          <Route path="/cart" element={<PrivateRoute><CartPage /></PrivateRoute>} />
+          <Route path="/view-products" element={<PrivateRoute><ViewProducts /></PrivateRoute>} />
+          <Route path="/vendor/view-orders" element={<PrivateRoute><VendorOrders /></PrivateRoute>} />
+          <Route path="/my-orders" element={<PrivateRoute><MyOrders /></PrivateRoute>} />
         </Routes>
       </Router>
     </AuthProvider>

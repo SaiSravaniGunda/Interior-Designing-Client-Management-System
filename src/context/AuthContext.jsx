@@ -6,30 +6,34 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [role, setRole] = useState(null);
-  
+  const [userId, setUserId] = useState(null);
+  const [authLoading, setAuthLoading] = useState(true); // ✅ new
 
-  const [userId, setUserId] = useState(null); // ✅ Store userId
 
-  useEffect(() => {
-    const checkAuthStatus = async () => {
-      try {
-        const res = await axios.get('http://localhost:8081/auth/me', { withCredentials: true });
-        setIsLoggedIn(true);
-        setRole(res.data.role);
-        setUserId(res.data.id); 
-      } catch (err) {
-        setIsLoggedIn(false);
-        setRole(null);
-        setUserId(null);
-      }
-    };
+useEffect(() => {
+  const checkAuthStatus = async () => {
+    try {
+      const res = await axios.get('http://localhost:8081/auth/me', { withCredentials: true });
+      setIsLoggedIn(true);
+      setRole(res.data.role);
+      setUserId(res.data.id);
+    } catch (err) {
+      setIsLoggedIn(false);
+      setRole(null);
+      setUserId(null);
+    } finally {
+      setAuthLoading(false); // ✅ Always set it after check
+    }
+  };
 
-    checkAuthStatus();
-  }, []);
+  checkAuthStatus();
+}, []);
 
   const login = async () => {
     try {
-      const res = await axios.get('http://localhost:8081/auth/me', { withCredentials: true });
+      const res = await axios.get('http://localhost:8081/auth/me', {
+        withCredentials: true,
+      });
       setIsLoggedIn(true);
       setRole(res.data.role);
       setUserId(res.data.id);
@@ -50,7 +54,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ isLoggedIn, role, userId, login, logout }}>
+    <AuthContext.Provider value={{ isLoggedIn, role, userId, authLoading, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
